@@ -1,5 +1,13 @@
+import Header from "./components/header";
+import GlobalStyle from "../src/styles/GlobalStyle";
+
 function App() {
-  return <div>hasdfadfi</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+    </>
+  );
 }
 
 export default App;
