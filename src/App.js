@@ -1,11 +1,11 @@
 import Header from "./components/header";
-import GlobalStyle from "../src/styles/GlobalStyle";
+import Main from "./components/main";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <Header />
+      <Main />
     </>
   );
 }

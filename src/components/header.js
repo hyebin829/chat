@@ -6,8 +6,8 @@ import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 
 const Header = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, mb: 10 }}>
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="large"
