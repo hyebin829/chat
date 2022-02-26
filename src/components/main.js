@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "@mui/material";
+import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
 
 const Main = () => {
   const [listening, setListening] = useState(false);
@@ -27,13 +28,14 @@ const Main = () => {
         try {
           let ssedata = JSON.parse(event.data.replace(/\'/g, '"'));
           // let writer = JSON.parse(event.data.replace(/\'/g, '"')).writer;
-          setData((v) => [...v, ssedata]);
+          setData((data) => [...data, ssedata]);
         } catch (error) {
           console.error(error.name);
           console.error(error.message);
           console.log(event.data);
         }
       };
+
       eventSource.onerror = (event) => {
         console.log(event.target.readyState);
         if (event.target.readyState === EventSource.CLOSED) {
@@ -56,6 +58,10 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
+    if (data.length === 20) {
+      data.shift();
+    }
+    setData(data);
     scrollEvent();
   }, [data]);
 
@@ -75,8 +81,14 @@ const Main = () => {
                 <Typography
                   sx={{ fontSize: 17, letterSpacing: -2, textAlign: "left" }}
                 >
-                  {v.title}
+                  {v.title}{" "}
+                  {v.post_type === "icon_pic" ? (
+                    <InsertPhotoOutlinedIcon />
+                  ) : (
+                    ""
+                  )}
                 </Typography>
+
                 {""}
                 <Typography
                   sx={{ fontSize: 13, letterSpacing: -1, textAlign: "right" }}
