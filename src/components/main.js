@@ -88,7 +88,7 @@ const Main = () => {
                     {mdSizeDown ? (
                       <Typography
                         sx={{
-                          fontSize: 13,
+                          fontSize: 10,
                           letterSpacing: -2,
                           fontWeight: 500,
                         }}
@@ -110,7 +110,7 @@ const Main = () => {
                     {mdSizeDown ? (
                       <Typography
                         sx={{
-                          fontSize: 15,
+                          fontSize: 12,
                           textAlign: "left",
                         }}
                       >
@@ -124,7 +124,7 @@ const Main = () => {
                     ) : mdSize ? (
                       <Typography
                         sx={{
-                          fontSize: 12,
+                          fontSize: 11,
                           textAlign: "left",
                         }}
                       >
